@@ -1,0 +1,24 @@
+.header{
+    display: flex;
+    justify-content: center;
+}
+.header h1{
+    color: whitesmoke;
+    text-align: center;
+}
+
+.forecastDays{
+
+}
+
+.weatherContainer{
+   text-align: center;
+}
+
+.searchField{
+    display: flex;
+}
+
+.sideNav{
+    text-align: center;
+}

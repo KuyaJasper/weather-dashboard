@@ -6,15 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="style.css">
+          <!--Import Google Icon Font-->
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+          <!-- Materialize CSS Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 
 <body>
-<div class="header"></div>
+    <!-- Header Container -->
+<div class="header blue darken-3">
+    <h1>Weather Dashboard</h1>
+</div>
 
-<div class="sideNav"></div>    
+<!-- Body Container -->
+<div class="row">
 
-<div class="container"></div>
+    <div class="sideNav col s4 deep-orange darken-1">
+        <h4>Search For a City</h4>
+
+        <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="textarea1" class="materialize-textarea"></textarea>
+                  <label for="textarea1">Enter City Name Here</label>
+                </div>
+                <button class="btn searchBtn">Search</button>
+              </div>
+            </form>
+          </div>
+                
+
+
+    </div>    
+    
+    <div class="weatherContainer container col s8 brown lighten-1">
+
+        <!-- City Name -->
+        <div class="cityName row">
+    <h1>City Name</h1>
+    <ul></ul>
+        </div>
+
+
+        <div class="forecastContainer row">
+            <div class="row">            
+                <h1>forecast</h1>
+            </div>
+<div class="row ">
+    <div class="forcastDays col blue accent-4 Day1">Day1</div>
+    <div class="forcastDays col blue accent-4 Day2">Day2</div>
+    <div class="forcastDays col blue accent-4 Day3">Day3</div>
+    <div class="forcastDays col blue accent-4 Day4">Day4</div>
+    <div class="forcastDays col blue accent-4 Day5">Day5</div>
+</div>
+    
+        </div>
+    </div>
+</div>
 
 <script src="/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
