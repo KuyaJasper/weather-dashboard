@@ -7,10 +7,6 @@
     text-align: center;
 }
 
-.forecastDays{
-
-}
-
 .weatherContainer{
    text-align: center;
 }
@@ -21,4 +17,16 @@
 
 .sideNav{
     text-align: center;
+}
+
+
+/* 5 Day Forecast */
+
+.forecastContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.forecastDatys{
+
 }

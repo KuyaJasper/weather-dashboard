@@ -1,5 +1,6 @@
 var searchBtn = document.querySelector('.searchBtn');
 var weatherInfo = document.querySelector('ul');
+var currentDate = moment().format('L');
 
 const apiKey = 'f8169e98b55ed37f39768cfa32a34da1';
 
@@ -21,12 +22,11 @@ function getAPI (cityName) {
             // calling locationCoord function here lets me use the data paramater
             locationCoord(data.coord.lon, data.coord.lat);
             var cityNamEL =document.querySelector('#cityNameEL');
-
             cityNamEL.textContent= data.name
 
             var weatherIcn = document.querySelector('#weatherIcon');
             weatherIcn.setAttribute('src',`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`)
-            // weatherIcn.setAttribute('src','http://openweathermap.org/img/wn/'+data.weather[0].icon+'.png')
+            // weatherIcn.setAttribute('src','http://openweathermap.org/img/wn/'+data.weather[0].icon+'.png') <=== This is the concat version
 
             // current weather api information
 
