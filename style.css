@@ -27,6 +27,9 @@
     justify-content: space-around;
 }
 
-.forecastDatys{
+.forecastDays{
+    height: inherit;
+    width: 6rem;
+    border-radius: .5rem;
 
 }
