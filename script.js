@@ -2,7 +2,7 @@ var searchBtn = document.querySelector('.searchBtn');
 var weatherInfo = document.querySelector('ul');
 
 // Moment.JS dates
-var currentDate = moment().format('L');
+var currentDate = moment().format('l');
 var castDay1 = moment().add(1, 'days').format('l');
 var castDay2 = moment().add(2, 'days').format('l');
 var castDay3 = moment().add(3, 'days').format('l');
