@@ -17,6 +17,8 @@ function getAPI (cityName) {
         // data parameter is the json object from the api
         .then(function (data) {
             console.log (data);
+
+            // calling locationCoord function here lets me use the data paramater
             locationCoord(data.coord.lon, data.coord.lat);
             var cityNamEL =document.querySelector('#cityNameEL');
 
@@ -31,6 +33,8 @@ function getAPI (cityName) {
         })
 }
 
+
+// using another api from OpenWeather DB because i need the UV info
 function locationCoord (long,lat){
 var requestURL = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat +'&lon='+long+'&exclude=minutely,hourly,alerts&appid='+ apiKey + '&units=imperial';
 
