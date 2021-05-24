@@ -8,10 +8,6 @@
     text-align: center;
 }
 
-.weatherContainer{
-   text-align: center;
-}
-
 .searchField{
     display: flex;
 }
@@ -28,10 +24,17 @@
     margin-right: 10rem;
     margin-left: 10rem;
     border: solid black;
-    border-radius: 2rem;
-    padding-top: inherit;
+    border-radius: .5rem;
+    padding-left: 1rem;
 }
 
+#cityNameEL{
+    font-size: 4rem;
+}
+
+#currentDate{
+    font-size: 2rem ;
+}
 
 
 /* 5 Day Forecast */
