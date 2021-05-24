@@ -70,6 +70,7 @@ fetch(requestURL)
 
     // call fiveDayCast here because we are using the data from the requestURL from this function
     fiveDayCast(data);
+    uvColors(data);
 })
 
 }
@@ -150,7 +151,7 @@ var uvStyle = document.querySelector('.uvStyle');
             uvStyle.classList.remove('uvModerate');
             uvStyle.classList.add('uvHigh');
         }
-        else if (currentUv >=8) {
+        else if (currentUv >=8 && currentUv <=10) {
             uvStyle.classList.remove('uvLow');
             uvStyle.classList.remove('uvModerate');
             uvStyle.classList.remove('uvHigh');
