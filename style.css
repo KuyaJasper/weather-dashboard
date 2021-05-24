@@ -20,6 +20,18 @@
 }
 
 
+/* City Container */
+
+#cityName{
+    margin-top: 1rem;
+    margin-right: 10rem;
+    margin-left: 10rem;
+    border: solid black;
+    border-radius: 2rem;
+}
+
+
+
 /* 5 Day Forecast */
 
 .forecastContainer{
@@ -31,5 +43,6 @@
     height: inherit;
     width: 6rem;
     border-radius: .5rem;
+    border: solid black;
 
 }
