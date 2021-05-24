@@ -60,7 +60,13 @@ fetch(requestURL)
     console.log(data);
     console.log(data.current.uvi);
     var uvEl = document.querySelector('#uvIndex');
-    uvEl.textContent = 'Current UV index: '+ data.current.uvi
+    uvEl.textContent = 'UV index: '+ data.current.uvi
+
+    var humidityEL = document.querySelector('#humidity');
+    humidityEL.textContent = `Humidity: ${data.current.humidity} %`;
+
+    var windSpeedEl = document.querySelector('#windSpeed');
+    windSpeedEl.textContent = `Wind Speed: ${Math.round(data.current.wind_speed)} MPH`;
 
     // call fiveDayCast here because we are using the data from the requestURL from this function
     fiveDayCast(data);

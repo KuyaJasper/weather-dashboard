@@ -38,20 +38,21 @@
                   id="textarea1"
                   class="materialize-textarea"
                 ></textarea>
-                <label for="textarea1">Enter City Here</label>
+                <label for="textarea1">City Name</label>
+                <button class="btn searchBtn">Search</button>
+
               </div>
-              <button class="btn searchBtn">Search</button>
             </div>
           </form>
         </div>
       </div>
 
-      <div class="weatherContainer container col s8 brown lighten-1">
+      <div class="weatherContainer container col s8 brown lighten-1" id="weatherContainer">
         <!-- City Name -->
         <div class="cityName row white darken-1" id="cityName">
           <ul>
-            <li><h2 id="cityNameEL"></h2></li>
-            <li><h4 id="currentDate"></h4></li>
+            <li id="cityNameEL"></li>
+            <li id="currentDate"></li>
             <li><img alt="" id="weatherIcon" /></li>
             <li id="humidity">Humidity</li>
             <li id="windSpeed">Wind Speed</li>

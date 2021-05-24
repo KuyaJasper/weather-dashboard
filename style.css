@@ -1,6 +1,7 @@
 .header{
     display: flex;
     justify-content: center;
+    margin-bottom: .5rem;
 }
 .header h1{
     color: whitesmoke;
@@ -28,6 +29,7 @@
     margin-left: 10rem;
     border: solid black;
     border-radius: 2rem;
+    padding-top: inherit;
 }
 
 
