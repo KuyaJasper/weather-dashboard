@@ -26,6 +26,7 @@
     border: solid black;
     border-radius: .5rem;
     padding-left: 1rem;
+    background-color:white;
 }
 
 #cityNameEL{
