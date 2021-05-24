@@ -82,6 +82,50 @@ function fiveDayCast (data) {
     
     var day1temp= document.querySelector('#castDay1temp');
     day1temp.textContent= `${fiveDays[0].temp.day} °F`;
+
+    // Day 2
+    
+    var day1date = document.querySelector('#castDay1');
+    day1date.textContent = castDay1;
+
+    var day1icon= document.querySelector('#castDay1icon')
+    day1icon.setAttribute('src',`http://openweathermap.org/img/wn/${fiveDays[0].weather[0].icon}.png`);
+    
+    var day1temp= document.querySelector('#castDay1temp');
+    day1temp.textContent= `${fiveDays[0].temp.day} °F`;
+
+    // Day 3
+    
+    var day1date = document.querySelector('#castDay1');
+    day1date.textContent = castDay1;
+
+    var day1icon= document.querySelector('#castDay1icon')
+    day1icon.setAttribute('src',`http://openweathermap.org/img/wn/${fiveDays[0].weather[0].icon}.png`);
+    
+    var day1temp= document.querySelector('#castDay1temp');
+    day1temp.textContent= `${fiveDays[0].temp.day} °F`;
+
+    // Day 4
+    
+    var day1date = document.querySelector('#castDay1');
+    day1date.textContent = castDay1;
+
+    var day1icon= document.querySelector('#castDay1icon')
+    day1icon.setAttribute('src',`http://openweathermap.org/img/wn/${fiveDays[0].weather[0].icon}.png`);
+    
+    var day1temp= document.querySelector('#castDay1temp');
+    day1temp.textContent= `${fiveDays[0].temp.day} °F`;
+
+    // Day 5
+    
+    var day1date = document.querySelector('#castDay1');
+    day1date.textContent = castDay1;
+
+    var day1icon= document.querySelector('#castDay1icon')
+    day1icon.setAttribute('src',`http://openweathermap.org/img/wn/${fiveDays[0].weather[0].icon}.png`);
+    
+    var day1temp= document.querySelector('#castDay1temp');
+    day1temp.textContent= `${fiveDays[0].temp.day} °F`;
 }
 
 
