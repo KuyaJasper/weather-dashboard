@@ -69,6 +69,8 @@ fetch(requestURL)
 }
 
 function fiveDayCast (data) {
+    console.log(data);
+    console.log(fiveDays);
  
     var fiveDays = data.daily.slice(0,5);
 
@@ -83,13 +85,13 @@ function fiveDayCast (data) {
     var day1temp= document.querySelector('#castDay1temp');
     day1temp.textContent= `${fiveDays[0].temp.day} °F`;
 
-    // Day 2
+    // // Day 2
     
     var day2date = document.querySelector('#castDay2');
     day2date.textContent = castDay2;
 
     var day2icon= document.querySelector('#castDay2icon')
-    day2icon.setAttribute('src',`http://openweathermap.org/img/wn/${fiveDays[1].weather[1].icon}.png`);
+    day2icon.setAttribute('src',`http://openweathermap.org/img/wn/${fiveDays[1].weather[0].icon}.png`);
     
     var day2temp= document.querySelector('#castDay2temp');
     day2temp.textContent= `${fiveDays[1].temp.day} °F`;
@@ -100,7 +102,7 @@ function fiveDayCast (data) {
     day3date.textContent = castDay3;
 
     var day3icon= document.querySelector('#castDay3icon')
-    day3icon.setAttribute('src',`http://openweathermap.org/img/wn/${fiveDays[2].weather[2].icon}.png`);
+    day3icon.setAttribute('src',`http://openweathermap.org/img/wn/${fiveDays[2].weather[0].icon}.png`);
     
     var day3temp= document.querySelector('#castDay3temp');
     day3temp.textContent= `${fiveDays[2].temp.day} °F`;
@@ -111,7 +113,7 @@ function fiveDayCast (data) {
     day4date.textContent = castDay4;
 
     var day4icon= document.querySelector('#castDay4icon')
-    day4icon.setAttribute('src',`http://openweathermap.org/img/wn/${fiveDays[3].weather[3].icon}.png`);
+    day4icon.setAttribute('src',`http://openweathermap.org/img/wn/${fiveDays[3].weather[0].icon}.png`);
     
     var day4temp= document.querySelector('#castDay4temp');
     day4temp.textContent= `${fiveDays[3].temp.day} °F`;
@@ -122,7 +124,7 @@ function fiveDayCast (data) {
     day5date.textContent = castDay5;
 
     var day5icon= document.querySelector('#castDay5icon')
-    day5icon.setAttribute('src',`http://openweathermap.org/img/wn/${fiveDays[4].weather[4].icon}.png`);
+    day5icon.setAttribute('src',`http://openweathermap.org/img/wn/${fiveDays[4].weather[0].icon}.png`);
     
     var day5temp= document.querySelector('#castDay5temp');
     day5temp.textContent= `${fiveDays[4].temp.day} °F`;
