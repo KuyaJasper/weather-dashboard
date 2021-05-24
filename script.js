@@ -136,6 +136,28 @@ function fiveDayCast (data) {
     day5temp.textContent= `${fiveDays[4].temp.day} °F`;
 }
 
+function uvColors (data){
+var currentUv = data.current.uvi;
+var uvStyle = document.querySelector('.uvStyle');
+    
+        if (currentUv <= 2) {
+            uvStyle.classList.add('uvLow')
+        } else if (currentUv >= 3 && currentUv <= 5) {
+            uvStyle.classList.remove('uvLow');
+            uvStyle.classList.add('uvModerate');} 
+            else if (currentUv >= 6 && currentUv <=7) {
+            uvStyle.classList.remove('uvLow');
+            uvStyle.classList.remove('uvModerate');
+            uvStyle.classList.add('uvHigh');
+        }
+        else if (currentUv >=8) {
+            uvStyle.classList.remove('uvLow');
+            uvStyle.classList.remove('uvModerate');
+            uvStyle.classList.remove('uvHigh');
+            uvStyle.classList.add('uvVeryHigh');
+        }
+}
+
 
 searchBtn.addEventListener('click', function (event) {
     event.preventDefault();
