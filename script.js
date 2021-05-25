@@ -200,6 +200,7 @@ searchBtn.addEventListener('click', function (event) {
 
 clearBtn.addEventListener('click', function(event){
 localStorage.clear();
+location.reload();
 event.preventDefault();
 });
 

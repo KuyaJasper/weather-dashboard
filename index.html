@@ -28,7 +28,7 @@
     <div class="row body">
       <!-- side search bar -->
       <div class="sideNav col s4">
-        <h4>Search for a City</h4>
+        <h4>Search for a City:</h4>
 
         <div class="row">
           <form class="col s12">
@@ -39,14 +39,19 @@
                   class="materialize-textarea"
                 ></textarea>
                 <label for="textarea1">City Name</label>
-                <button class="btn searchBtn blue darken-3">Search</button>
-
+                <button
+                  style="display: inline-flex"
+                  class="btn searchBtn blue darken-3"
+                >
+                  Search
+                  <i class="large material-icons" style="margin-left: 5%"
+                    >search</i>
+                </button>
               </div>
 
               <div class="row">
                 <h4 class="historyEl hide">History:</h4>
-                <ul id="searchHistory">
-                </ul>
+                <ul id="searchHistory"></ul>
               </div>
 
               <div class="row">
@@ -57,15 +62,19 @@
         </div>
       </div>
 
-      <div class="weatherContainer container col s8 hide " id="weatherContainer">
+      <div class="weatherContainer container col s8 hide" id="weatherContainer">
         <!-- City Name -->
         <div class="cityName row" id="cityName">
           <ul>
-            <li><span id="cityNameEL"></span> <span id="currentDate"></span> <span><img alt="" id="weatherIcon" /></span> <li>
+            <li>
+              <span id="cityNameEL"></span> <span id="currentDate"></span>
+              <span><img alt="" id="weatherIcon" /></span>
+            </li>
+            <li></li>
             <li id="currentTemp"></li>
             <li id="humidity"></li>
             <li id="windSpeed"></li>
-            <li class ='uvStyle' id="uvIndex"></li>
+            <li class="uvStyle" id="uvIndex"></li>
           </ul>
         </div>
 
@@ -97,7 +106,7 @@
                 <li id="castDay3temp"></li>
               </ul>
             </div>
-            
+
             <!-- DAY 4   -->
             <div class="forecastDays col blue darken-3 Day4">
               <ul>
@@ -106,7 +115,7 @@
                 <li id="castDay4temp"></li>
               </ul>
             </div>
-            
+
             <!-- DAY 5 -->
             <div class="forecastDays col blue darken-3 Day5">
               <ul>
