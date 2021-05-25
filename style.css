@@ -8,6 +8,9 @@
     text-align: center;
 }
 
+.body{
+    padding: 1%;
+}
 
 .searchField{
     display: flex;
@@ -15,6 +18,10 @@
 
 .sideNav{
     text-align: center;
+    margin-left: 200px;
+    border: solid black;
+    border-radius: .5rem ;
+    
 }
 
 #searchHistroy{
@@ -40,7 +47,7 @@
 }
 
 #currentDate{
-    font-size: 2rem ;
+    font-size: 3rem ;
 }
 
 

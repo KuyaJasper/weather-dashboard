@@ -1,4 +1,5 @@
 var searchBtn = document.querySelector('.searchBtn');
+var clearBtn = document.querySelector('.clearBtn');
 var userInput = document.querySelector('#textarea1').value;
 var weatherInfo = document.querySelector('ul');
 var weatherContainer = document.querySelector('.weatherContainer')
@@ -29,10 +30,10 @@ function getAPI (cityName) {
             // calling locationCoord function here lets me use the data paramater
             locationCoord(data.coord.lon, data.coord.lat);
             var cityNamEL = document.querySelector('#cityNameEL');
-            cityNamEL.textContent= `${data.name}`
+            cityNamEL.textContent= `${data.name} `
 
             var currentDateEL = document.querySelector('#currentDate');
-            currentDateEL.textContent = `${currentDate}`;
+            currentDateEL.textContent = `(${currentDate})`;
 
             var currentTempEL = document.querySelector('#currentTemp');
             currentTempEL.textContent = `Current Temp: ${Math.round(data.main.temp)} °F`
@@ -165,14 +166,20 @@ function searchHistoryButton (userInput){
     var createItem = document.createElement('li');
     var buttonText = document.createTextNode(userInput);
     createItem.appendChild(buttonText);
-    createItem.setAttribute('class', "btn historyBtn col");
+    createItem.setAttribute('class', "btn historyBtn blue darken-3");
     searchHistoryEL.appendChild(createItem);
 }
 
-function localStorageData (userInput) {
-    var userData = userInput;
-    localStorage.getItem(userData);
-    localStorage.setItem("userHistory", JSON.stringify(userData));
+function localStorageData (userData) {
+    let userHistory;
+    if (localStorage.getItem('History') === null) {
+        userHistory = [];
+    }else {
+        userHistory = JSON.parse(localStorage.getItem('History'));
+    }
+
+    userHistory.push(userData);
+    localStorage.setItem('History',JSON.stringify(userHistory));
     
 }
 
@@ -180,12 +187,18 @@ searchBtn.addEventListener('click', function (event) {
     var userInput = document.querySelector('#textarea1').value;
     event.preventDefault();
     weatherContainer.classList.remove('hide');
+    clearBtn.classList.remove('hide');
     console.log(userInput);
     console.log(localStorage);
     localStorageData(userInput);
     searchHistoryButton(userInput);
     getAPI(userInput);
     
+});
+
+clearBtn.addEventListener('click', function(event){
+localStorage.clear();
+event.preventDefault();
 });
 
 

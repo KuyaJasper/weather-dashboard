@@ -25,10 +25,10 @@
     </div>
 
     <!-- Body Container -->
-    <div class="row">
+    <div class="row body">
       <!-- side search bar -->
-      <div class="sideNav col s4 deep-orange darken-1">
-        <h4>Search For a City</h4>
+      <div class="sideNav col s4">
+        <h4>Search for a City</h4>
 
         <div class="row">
           <form class="col s12">
@@ -39,13 +39,17 @@
                   class="materialize-textarea"
                 ></textarea>
                 <label for="textarea1">City Name</label>
-                <button class="btn searchBtn">Search</button>
+                <button class="btn searchBtn blue darken-3">Search</button>
 
               </div>
 
               <div class="row">
                 <ul id="searchHistory">
                 </ul>
+              </div>
+
+              <div class="row">
+                <button class="btn clearBtn blue darken-3 hide">Clear</button>
               </div>
             </div>
           </form>
@@ -56,8 +60,7 @@
         <!-- City Name -->
         <div class="cityName row" id="cityName">
           <ul>
-            <li><span id="cityNameEL"></span> <span><img alt="" id="weatherIcon" /></span> <li>
-            <li id="currentDate"></li>
+            <li><span id="cityNameEL"></span> <span id="currentDate"></span> <span><img alt="" id="weatherIcon" /></span> <li>
             <li id="currentTemp"></li>
             <li id="humidity"></li>
             <li id="windSpeed"></li>
@@ -68,7 +71,7 @@
         <div class="row">
           <div class="contianer forecastContainer">
             <!-- DAY 1 -->
-            <div class="forecastDays col blue accent-4 Day1">
+            <div class="forecastDays col blue darken-3 Day1">
               <ul>
                 <li id="castDay1"></li>
                 <li><img id="castDay1icon" /></li>
@@ -77,7 +80,7 @@
             </div>
 
             <!-- DAY 2 -->
-            <div class="forecastDays col blue accent-4 Day2">
+            <div class="forecastDays col blue darken-3 Day2">
               <ul>
                 <li id="castDay2"></li>
                 <li><img id="castDay2icon" /></li>
@@ -86,7 +89,7 @@
             </div>
 
             <!-- DAY 3 -->
-            <div class="forecastDays col blue accent-4 Day3">
+            <div class="forecastDays col blue darken-3 Day3">
               <ul>
                 <li id="castDay3"></li>
                 <li><img id="castDay3icon" /></li>
@@ -95,7 +98,7 @@
             </div>
             
             <!-- DAY 4   -->
-            <div class="forecastDays col blue accent-4 Day4">
+            <div class="forecastDays col blue darken-3 Day4">
               <ul>
                 <li id="castDay4"></li>
                 <li><img id="castDay4icon" /></li>
@@ -104,7 +107,7 @@
             </div>
             
             <!-- DAY 5 -->
-            <div class="forecastDays col blue accent-4 Day5">
+            <div class="forecastDays col blue darken-3 Day5">
               <ul>
                 <li id="castDay5"></li>
                 <li><img id="castDay5icon" /></li>
