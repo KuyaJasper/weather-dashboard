@@ -163,11 +163,14 @@ var uvStyle = document.querySelector('.uvStyle');
         }
 }
 
-
-function localStorage (data){
-    
+function searchHistoryButton (userInput){
+    var searchHistoryEL = document.querySelector('#searchHistory');
+    var createItem = document.createElement('li');
+    var buttonText = document.createTextNode(userInput);
+    createItem.appendChild(buttonText);
+    createItem.setAttribute('class', "btn");
+    searchHistoryEL.appendChild(createItem);
 }
-
 
 searchBtn.addEventListener('click', function (event) {
     event.preventDefault();
@@ -175,6 +178,7 @@ searchBtn.addEventListener('click', function (event) {
     var userInput = document.querySelector('#textarea1').value;
     console.log(userInput);
     console.log(JSON);
+    searchHistoryButton(userInput);
     getAPI(userInput);
     
 });
