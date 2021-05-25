@@ -174,6 +174,7 @@ searchBtn.addEventListener('click', function (event) {
     weatherContainer.classList.remove('hide');
     var userInput = document.querySelector('#textarea1').value;
     console.log(userInput);
+    console.log(JSON);
     getAPI(userInput);
     
 });
