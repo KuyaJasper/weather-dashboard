@@ -1,5 +1,6 @@
 var searchBtn = document.querySelector('.searchBtn');
 var weatherInfo = document.querySelector('ul');
+var weatherContainer = document.querySelector('.weatherContainer')
 
 // Moment.JS dates
 var currentDate = moment().format('l');
@@ -32,6 +33,9 @@ function getAPI (cityName) {
 
             var currentDateEL = document.querySelector('#currentDate');
             currentDateEL.textContent = `${currentDate}`;
+
+            var currentTempEL = document.querySelector('#currentTemp');
+            currentTempEL.textContent = `Current Temp: ${Math.round(data.main.temp)} °F`
 
             var weatherIcn = document.querySelector('#weatherIcon');
             weatherIcn.setAttribute('src',`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`)
@@ -90,7 +94,7 @@ function fiveDayCast (data) {
     day1icon.setAttribute('src',`http://openweathermap.org/img/wn/${fiveDays[0].weather[0].icon}.png`);
     
     var day1temp= document.querySelector('#castDay1temp');
-    day1temp.textContent= `${fiveDays[0].temp.day} °F`;
+    day1temp.textContent= `${Math.round(fiveDays[0].temp.day)} °F`;
 
     // // Day 2
     
@@ -101,7 +105,7 @@ function fiveDayCast (data) {
     day2icon.setAttribute('src',`http://openweathermap.org/img/wn/${fiveDays[1].weather[0].icon}.png`);
     
     var day2temp= document.querySelector('#castDay2temp');
-    day2temp.textContent= `${fiveDays[1].temp.day} °F`;
+    day2temp.textContent= `${Math.round(fiveDays[1].temp.day)} °F`;
 
     // Day 3
     
@@ -112,7 +116,7 @@ function fiveDayCast (data) {
     day3icon.setAttribute('src',`http://openweathermap.org/img/wn/${fiveDays[2].weather[0].icon}.png`);
     
     var day3temp= document.querySelector('#castDay3temp');
-    day3temp.textContent= `${fiveDays[2].temp.day} °F`;
+    day3temp.textContent= `${Math.round(fiveDays[2].temp.day)} °F`;
 
     // Day 4
     
@@ -123,7 +127,7 @@ function fiveDayCast (data) {
     day4icon.setAttribute('src',`http://openweathermap.org/img/wn/${fiveDays[3].weather[0].icon}.png`);
     
     var day4temp= document.querySelector('#castDay4temp');
-    day4temp.textContent= `${fiveDays[3].temp.day} °F`;
+    day4temp.textContent= `${Math.round(fiveDays[3].temp.day)} °F`;
 
     // Day 5
     
@@ -134,7 +138,7 @@ function fiveDayCast (data) {
     day5icon.setAttribute('src',`http://openweathermap.org/img/wn/${fiveDays[4].weather[0].icon}.png`);
     
     var day5temp= document.querySelector('#castDay5temp');
-    day5temp.textContent= `${fiveDays[4].temp.day} °F`;
+    day5temp.textContent= `${Math.round(fiveDays[4].temp.day)} °F`;
 }
 
 function uvColors (data){
@@ -143,15 +147,15 @@ var uvStyle = document.querySelector('.uvStyle');
     
         if (currentUv <= 2) {
             uvStyle.classList.add('uvLow')
-        } else if (currentUv >= 3 && currentUv <= 5) {
+        } else if (currentUv > 2 && currentUv <= 5) {
             uvStyle.classList.remove('uvLow');
             uvStyle.classList.add('uvModerate');} 
-            else if (currentUv >= 6 && currentUv <=7) {
+            else if (currentUv > 5 && currentUv <=7) {
             uvStyle.classList.remove('uvLow');
             uvStyle.classList.remove('uvModerate');
             uvStyle.classList.add('uvHigh');
         }
-        else if (currentUv >=8 && currentUv <=10) {
+        else if (currentUv >7) {
             uvStyle.classList.remove('uvLow');
             uvStyle.classList.remove('uvModerate');
             uvStyle.classList.remove('uvHigh');
@@ -160,8 +164,14 @@ var uvStyle = document.querySelector('.uvStyle');
 }
 
 
+function localStorage (data){
+    
+}
+
+
 searchBtn.addEventListener('click', function (event) {
     event.preventDefault();
+    weatherContainer.classList.remove('hide');
     var userInput = document.querySelector('#textarea1').value;
     console.log(userInput);
     getAPI(userInput);
