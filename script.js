@@ -1,5 +1,6 @@
 var searchBtn = document.querySelector('.searchBtn');
 var clearBtn = document.querySelector('.clearBtn');
+var historyTitle = document.querySelector('.historyEl');
 var userInput = document.querySelector('#textarea1').value;
 var weatherInfo = document.querySelector('ul');
 var weatherContainer = document.querySelector('.weatherContainer')
@@ -188,6 +189,7 @@ searchBtn.addEventListener('click', function (event) {
     event.preventDefault();
     weatherContainer.classList.remove('hide');
     clearBtn.classList.remove('hide');
+    historyTitle.classList.remove('hide');
     console.log(userInput);
     console.log(localStorage);
     localStorageData(userInput);
