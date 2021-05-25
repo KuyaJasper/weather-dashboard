@@ -1,6 +1,8 @@
 var searchBtn = document.querySelector('.searchBtn');
+var userInput = document.querySelector('#textarea1').value;
 var weatherInfo = document.querySelector('ul');
 var weatherContainer = document.querySelector('.weatherContainer')
+var historyBtn = document.querySelector('.historyBtn');
 
 // Moment.JS dates
 var currentDate = moment().format('l');
@@ -19,13 +21,11 @@ function getAPI (cityName) {
     fetch(requestURL) 
     .then(
         function (response) {
-            console.log(response);
             return response.json();
         })
 
         // data parameter is the json object from the api
         .then(function (data) {
-            console.log (data);
             // calling locationCoord function here lets me use the data paramater
             locationCoord(data.coord.lon, data.coord.lat);
             var cityNamEL = document.querySelector('#cityNameEL');
@@ -56,13 +56,10 @@ var requestURL = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat +'
 fetch(requestURL)
 .then(
     function (response) {
-        console.log(response);
         return response.json();
     }
 )
 .then(function (data) {
-    console.log(data);
-    console.log(data.current.uvi);
     var uvEl = document.querySelector('#uvIndex');
     uvEl.textContent = 'UV index: '+ data.current.uvi
 
@@ -80,8 +77,6 @@ fetch(requestURL)
 }
 
 function fiveDayCast (data) {
-    console.log(data);
-    console.log(fiveDays);
  
     var fiveDays = data.daily.slice(0,5);
 
@@ -164,21 +159,38 @@ var uvStyle = document.querySelector('.uvStyle');
 }
 
 function searchHistoryButton (userInput){
+
+    // this creates a button with the user input as the text 
     var searchHistoryEL = document.querySelector('#searchHistory');
     var createItem = document.createElement('li');
     var buttonText = document.createTextNode(userInput);
     createItem.appendChild(buttonText);
-    createItem.setAttribute('class', "btn");
+    createItem.setAttribute('class', "btn historyBtn col");
     searchHistoryEL.appendChild(createItem);
 }
 
+function localStorageData (userInput) {
+    var userData = userInput;
+    localStorage.getItem(userData);
+    localStorage.setItem("userHistory", JSON.stringify(userData));
+    
+}
+
 searchBtn.addEventListener('click', function (event) {
+    var userInput = document.querySelector('#textarea1').value;
     event.preventDefault();
     weatherContainer.classList.remove('hide');
-    var userInput = document.querySelector('#textarea1').value;
     console.log(userInput);
-    console.log(JSON);
+    console.log(localStorage);
+    localStorageData(userInput);
     searchHistoryButton(userInput);
     getAPI(userInput);
     
 });
+
+
+// historyBtn.addEventListener('click', function (event){
+//     var searchData = historyBtn;
+//     getAPI(searchData);
+//     event.preventDefault;
+// });

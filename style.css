@@ -17,6 +17,11 @@
     text-align: center;
 }
 
+#searchHistroy{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 
 /* City Container */
 
@@ -60,24 +65,24 @@
 
 .uvLow{
     background-color: green;
-    margin-right: 34rem;
+    margin-right: 80%;
     color: rgb(94.1%,91.8%,83.9%);
 }
 
 .uvModerate{
     background-color: rgb(94.1%,75.7%,18.8%);
-    margin-right: 34rem;
+    margin-right: 80%;
     color: rgb(94.1%,91.8%,83.9%);
 }
 
 .uvHigh{
     background-color: rgb(100%,48.2%,0%);
-    margin-right: 34rem;
+    margin-right: 80%;
     color: rgb(94.1%,91.8%,83.9%);
 }
 
 .uvVeryHigh{
     background-color: rgb(84.3%,23.1%,24.3%);
-    margin-right: 34rem;
+    margin-right: 80%;
     color: rgb(94.1%,91.8%,83.9%);
 }
