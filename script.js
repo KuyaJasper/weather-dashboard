@@ -18,6 +18,7 @@ const apiKey = 'f8169e98b55ed37f39768cfa32a34da1';
 
 
 function getAPI (cityName) {
+    console.log("getAPI");
     var requestURL = 'https://api.openweathermap.org/data/2.5/weather?q='+ cityName +'&appid=' + apiKey + '&units=imperial';
 
     fetch(requestURL) 
@@ -144,6 +145,9 @@ var uvStyle = document.querySelector('.uvStyle');
     
         if (currentUv <= 2) {
             uvStyle.classList.add('uvLow')
+            uvStyle.classList.remove('uvModerate');
+            uvStyle.classList.remove('uvHigh');
+            uvStyle.classList.remove('uvVeryHigh');
         } else if (currentUv > 2 && currentUv <= 5) {
             uvStyle.classList.remove('uvLow');
             uvStyle.classList.add('uvModerate');} 
@@ -169,6 +173,11 @@ function searchHistoryButton (userInput){
     createItem.appendChild(buttonText);
     createItem.setAttribute('class', "btn historyBtn blue darken-3");
     searchHistoryEL.appendChild(createItem);
+
+    createItem.addEventListener('click', function (){
+        getAPI(userInput);
+        console.log(userInput);
+    })
 }
 
 function localStorageData (userData) {
@@ -181,7 +190,21 @@ function localStorageData (userData) {
 
     userHistory.push(userData);
     localStorage.setItem('History',JSON.stringify(userHistory));
-    
+}
+
+function pageloadFunction () {
+    let userHistory;
+    if (localStorage.getItem('History') === null) {
+        userHistory = [];
+    }else {
+        userHistory = JSON.parse(localStorage.getItem('History'));
+        // set up logic to show clear button when there is local storage data, here or other parts of this function
+
+    }
+
+    userHistory.forEach(userData => {
+        searchHistoryButton(userData);
+    });
 }
 
 searchBtn.addEventListener('click', function (event) {
@@ -194,8 +217,7 @@ searchBtn.addEventListener('click', function (event) {
     console.log(localStorage);
     localStorageData(userInput);
     searchHistoryButton(userInput);
-    getAPI(userInput);
-    
+    getAPI(userInput);    
 });
 
 clearBtn.addEventListener('click', function(event){
@@ -203,6 +225,8 @@ localStorage.clear();
 location.reload();
 event.preventDefault();
 });
+
+pageloadFunction();
 
 
 // historyBtn.addEventListener('click', function (event){
