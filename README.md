@@ -6,7 +6,7 @@ Homework assignment for Rutgers Coding Bootcamp. Server-side APIs: Weather Dashb
 # Table of Contents
   * [Development](#Development)
   * [License](#License)
-  * [Screenshot](#Screenshot)
+  * [Screen Recording](#Screen-Recording)
   * [Questions](#Questions)
   * [Application](#Application)
 
@@ -27,11 +27,11 @@ I did most of my work in the development branch. I will be cleaning and deleting
 [![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://jasper-abarquez.mit-license.org)
 
 
-# Screenshot
+# Screen Recording
 
 Example of how deployed application should run:
 
-![ScreenshotRecording](INSERT SCREEN RECORDING HERE)
+![ScreenshotRecording](./Assets/ScreenRecording.gif)
 
 # Questions
 
