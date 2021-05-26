@@ -33,9 +33,7 @@ function getAPI(cityName) {
       return response.json();
     })
 
-    // data parameter is the json object from the api
     .then(function (data) {
-      // calling locationCoord function here lets me use the data paramater
       locationCoord(data.coord.lon, data.coord.lat);
       var cityNamEL = document.querySelector("#cityNameEL");
       cityNamEL.textContent = `${data.name} `;
@@ -53,14 +51,10 @@ function getAPI(cityName) {
         "src",
         `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`
       );
-      // weatherIcn.setAttribute('src','http://openweathermap.org/img/wn/'+data.weather[0].icon+'.png') <=== This is the concat version
-
-      // current weather api information
     });
 }
 
-// using another api from OpenWeather DB because i need the UV info
-// 5 day forcast and uv data (this is the ONE CALL API)
+
 
 function locationCoord(long, lat) {
   var requestURL =
@@ -87,8 +81,6 @@ function locationCoord(long, lat) {
       windSpeedEl.textContent = `Wind Speed: ${Math.round(
         data.current.wind_speed
       )} MPH`;
-
-      // call fiveDayCast here because we are using the data from the requestURL from this function
       fiveDayCast(data);
       uvColors(data);
     });
@@ -196,7 +188,6 @@ function uvColors(data) {
 }
 
 function searchHistoryButton(userInput) {
-  // this creates a button with the user input as the text
   var searchHistoryEL = document.querySelector("#searchHistory");
   var createItem = document.createElement("li");
   var buttonText = document.createTextNode(userInput);
@@ -206,7 +197,6 @@ function searchHistoryButton(userInput) {
 
   createItem.addEventListener("click", function () {
     getAPI(userInput);
-    console.log(userInput);
     weatherContainer.classList.remove("hide");
   });
 }
@@ -245,8 +235,6 @@ searchBtn.addEventListener("click", function (event) {
   weatherContainer.classList.remove("hide");
   clearBtn.classList.remove("hide");
   historyTitle.classList.remove("hide");
-  console.log(userInput);
-  console.log(localStorage);
   localStorageData(userInput);
   searchHistoryButton(userInput);
   getAPI(userInput);

@@ -4,20 +4,23 @@
 Homework assignment for Rutgers Coding Bootcamp. Server-side APIs: Weather Dashboard. 
 
 # Table of Contents
-  * [Usage](#Usage)
+  * [Development](#Development)
   * [License](#License)
   * [Screenshot](#Screenshot)
   * [Questions](#Questions)
+  * [Application](#Application)
 
 
 
 # Usage
-To run the application, open up your Terminal/Bash and type in the following:
 
-```bash
-npm run start
-```
-Follow the prompts, you will be able to execute the functions detailed to you in the terminal!
+For this application, I used [MaterializeCSS](https://materializecss.com) for help styling the application.
+
+The weather data was taken from the [OpenWeatherMap](https://openweathermap.org/api) API. Specifically the "One Call", and the "Current Weather Data" APIs
+
+I did most of my work in the development branch. I will be cleaning and deleting all comments on the main branch, and using the develop branch as a reference notebook.
+
+
 
 # License
 
@@ -37,4 +40,10 @@ Reach out at:
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/KuyaJasper)
 
 [![Email badge](https://img.shields.io/badge/Email-abarquezj1@gmail.com-red.svg)](mailto:abarquezj1@gmail.com)
+
+# Application
+
+For deployed application:
+
+[Click Here](https://kuyajasper.github.io/weather-dashboard/)
 
