@@ -5,6 +5,8 @@ var userInput = document.querySelector('#textarea1').value;
 var weatherInfo = document.querySelector('ul');
 var weatherContainer = document.querySelector('.weatherContainer')
 var historyBtn = document.querySelector('.historyBtn');
+var testBtn = document.querySelector('.testBtn');
+
 
 // Moment.JS dates
 var currentDate = moment().format('l');
@@ -150,10 +152,14 @@ var uvStyle = document.querySelector('.uvStyle');
             uvStyle.classList.remove('uvVeryHigh');
         } else if (currentUv > 2 && currentUv <= 5) {
             uvStyle.classList.remove('uvLow');
-            uvStyle.classList.add('uvModerate');} 
+            uvStyle.classList.add('uvModerate');
+            uvStyle.classList.remove('uvHigh');
+            uvStyle.classList.remove('uvVeryHigh');
+        } 
             else if (currentUv > 5 && currentUv <=7) {
             uvStyle.classList.remove('uvLow');
             uvStyle.classList.remove('uvModerate');
+            uvStyle.classList.remove('uvHigh');
             uvStyle.classList.add('uvHigh');
         }
         else if (currentUv >7) {
@@ -177,6 +183,7 @@ function searchHistoryButton (userInput){
     createItem.addEventListener('click', function (){
         getAPI(userInput);
         console.log(userInput);
+        weatherContainer.classList.remove('hide');
     })
 }
 
@@ -198,8 +205,9 @@ function pageloadFunction () {
         userHistory = [];
     }else {
         userHistory = JSON.parse(localStorage.getItem('History'));
+        historyTitle.classList.remove('hide');
+        clearBtn.classList.remove('hide');
         // set up logic to show clear button when there is local storage data, here or other parts of this function
-
     }
 
     userHistory.forEach(userData => {
@@ -225,6 +233,13 @@ localStorage.clear();
 location.reload();
 event.preventDefault();
 });
+
+testBtn.addEventListener('click', function(event){
+    var userInput = document.querySelector('#poke-input').value;
+    event.preventDefault();
+    getAPI(userInput);
+});
+
 
 pageloadFunction();
 
