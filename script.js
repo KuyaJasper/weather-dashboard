@@ -198,6 +198,7 @@ function searchHistoryButton(userInput) {
   createItem.addEventListener("click", function () {
     getAPI(userInput);
     weatherContainer.classList.remove("hide");
+    preventDefault();
   });
 }
 
