@@ -12,7 +12,7 @@ Homework assignment for Rutgers Coding Bootcamp. Server-side APIs: Weather Dashb
 
 
 
-# Usage
+# Development
 
 For this application, I used [MaterializeCSS](https://materializecss.com) for help styling the application.
 
